@@ -33,15 +33,17 @@ The following line graph shows the monthly count of schools within a half mile d
 
 As you can see, the risk of marijuana exposure to children is not that high to begin with, and has dropped down since the passage of Prop 64. The maximum count of marijuana-related arrests was 160 and that is taking into account around 900 LAUSD schools.
 
-Next, we examined 4000 marijuana related arrests from 2015 to 2019 and used a logistic classification model to look at which features are most important in classifying whether each marijuana arrest is related to the possession of marijuana or related to selling marijuana. 
+Next, we examined 4156 marijuana related arrests from 2015 to 2019 and used a logistic classification model to look at which features are most important in classifying whether each marijuana arrest is related to selling marijuana or related to not selling marijuana. 
 
-The features we examined were the coordinates of the arrests, the age, sex, and race of perpetrator, the number of dispensaries within a half mile from the arrest, the number of schools within a half mile from the arrest, and the area names which are based on the LAPD sections.
+The features we examined were the coordinates of the arrests, the age, sex, and race of perpetrator, the number of dispensaries within 1 mile from the arrest, the number of schools 1 mile from the arrest, and the area names which are based on the LAPD sections.
+
+As a result, the fear of marijuana exposure to children and minors appears to be a non factor. There are two classes, selling marijuana and not selling marijuana, and the argument is made that selling marijuana exposes children to marijuana more. The variable `school_1_mile` is the count of schools that are within 1 mile of each arrest. Due to the log odds of `school_1_mile` equal to one, having a school within 1 mile of an arrest is as likely as the marijuana arrest to be related to selling and to not selling. The top 8 out of 10 log-odd features that increase the likelihood of whether a marijuana arrest is related to selling are the LAPD Area Names.
 
 ![classification_1](plots/classification_1.png)
 
 ![classification_2](plots/classification_2.png)
 
-We want to explicitly state that the model’s purpose was not to make predictions as to whether an individual with marijuana is more likely to be arrested for one crime over the other. Rather, the objective was to examine whether certain locations are more prone to marijuana exposure through selling vs. possession of marijuana.
+We want to explicitly state that the model's purpose was not to make predictions as to whether an individual with marijuana is more likely to be arrested for one crime over the other. Rather, the objective was to examine whether certain locations are more prone to marijuana exposure through selling vs. not selling marijuana.
 
 #### Opposition Argument: Increased Crime Near Dispensaries
 Two of the opposition’s main arguments against Prop 64 suggested legalization would result in an increase in cartel and black market activity, as well as constitute “an all-out assault on underprivileged neighborhoods already reeling from alcohol and drug addiction problems.”
